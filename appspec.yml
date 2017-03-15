@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /opt/repo/node-express
+    destination: /var/opt/repo/node-express
 hooks:
   BeforeInstall:
     - location: ./scripts/install-dependencies.sh
