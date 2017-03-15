@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+files:
+  - source: ./install.txt
+    destination: /opt/repo/node-express
+hooks:
+  BeforeInstall:
+    - location: ./scripts/install-dependencies.sh
+      timeout: 900
+  ApplicationStart:
+    - location: ./scripts/application-start.sh
+      timeout: 900
+  
