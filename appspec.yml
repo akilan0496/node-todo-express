@@ -3,11 +3,18 @@ os: linux
 files:
   - source: /
     destination: /var/opt/repo/node-express
+permissions:
+  - object: /
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
 hooks:
   BeforeInstall:
     - location: ./scripts/install-dependencies.sh
       timeout: 900
+      runas: root
   ApplicationStart:
     - location: ./scripts/application-start.sh
       timeout: 900
+      runas: ubuntu
   
